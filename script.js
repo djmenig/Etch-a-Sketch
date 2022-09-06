@@ -1,8 +1,10 @@
+let color = 'blackAndWhite';
+
 //creates the grid which listens for the mouse cursor to paint the grid on mouseover
 function createGrid(size) {
     let grid = document.querySelector('#grid');
     let gridSizeSquared = size * size;
-
+    
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`; //stylizes #grid columns according to the size variable
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`; //stylizes #grid rows according to the size variable
 
@@ -12,8 +14,11 @@ function createGrid(size) {
         square.classList.add('square');
         grid.insertAdjacentElement('beforeend', square);
         square.addEventListener('mouseover', (event) => {
-            //square.style.backgroundColor = 'black'; //draws each square black
-            square.style.backgroundColor = randomColor(); //draws each square a random color
+            if(color == 'blackAndWhite') {
+                square.style.backgroundColor = 'black'; //draws each square black
+            } else if(color == 'color') {
+                square.style.backgroundColor = randomColor(); //draws each square a random color
+            }
         })
     }
 }
@@ -44,3 +49,13 @@ function randomColor() {
     b = Math.floor(Math.random() * 256);
     return `rgb(${r}, ${g}, ${b})` 
 }
+
+function blackColor() {
+    return color = 'blackAndWhite';
+}
+
+function randomRgbColor() {
+    return color = 'color';
+}
+
+console.log(color);

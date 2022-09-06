@@ -12,6 +12,7 @@ h2 {
 .buttonContainer {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 15px;
     margin: 25px;
 }
@@ -34,5 +35,5 @@ h2 {
 
 footer {
     text-align: right;
-    margin: 25px;
+    margin: 10px;
 }
